@@ -4,19 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link src="css/style.css" rel="css" />
-    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/inter.css" />
+    <title>Encriptador de Texto | Alura Challenge</title>
   </head>
   <body>
-    <img src="images/logo.png" alt="Logo" />
-    <input id="text" placeholder="Ingrese su texto aquí" />
-    <p>Solo letras minúsculas y sin acentos</p>
-    <button>Encriptar</button>
-    <button>Desencriptar</button>
-    <div>
-      <img src="images/person.png" alt="Person" />
-      <p><b>Ningún mensaje fue encontrado</b></p>
-      <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+    <div class="container">
+      <section id="main">
+        <div class="main-top">
+          <img src="images/logo.svg" alt="Logo" class="logo" />
+        </div>
+        <div class="main-middle">
+          <input
+            type="text"
+            id="message"
+            placeholder="Ingrese el texto aquí"
+            class="input"
+          />
+        </div>
+        <div class="main-bottom">
+          <div class="main-bottom-info">
+            <p class="info-tip">
+              &#x1F6C8; Solo letras minúsculas y sin acentos.
+            </p>
+          </div>
+          <div class="main-bottom-buttons">
+            <button class="button-encrypt">Encriptar</button>
+            <button class="button-decrypt">Desencriptar</button>
+          </div>
+        </div>
+      </section>
+      <section id="side">
+        <div class="side-background">
+          <img src="images/person.svg" alt="Person" class="image" />
+          <p class="info-title center">Ningún mensaje fue encontrado</p>
+          <p class="info-text center">
+            Ingresa el texto que desees encriptar o desencriptar
+          </p>
+          <div style="display: none">
+            <button>Copiar</button>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
