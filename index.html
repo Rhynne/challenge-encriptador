@@ -4,22 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/inter.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
     <title>Encriptador de Texto | Alura Challenge</title>
   </head>
   <body>
     <div class="container">
       <section id="main">
         <div class="main-top">
-          <img src="images/logo.svg" alt="Logo" class="logo" />
+          <img src="assets/images/logo.svg" alt="Logo" class="logo" />
         </div>
         <div class="main-middle">
           <textarea
-            name="textarea"
+            class="input"
             rows="10"
             cols="50"
-            id="message"
+            id="input"
             placeholder="Ingrese el texto aquí"
           ></textarea>
         </div>
@@ -40,56 +43,33 @@
         </div>
       </section>
       <section id="side">
-        <div class="side-background">
-          <div id="result"></div>
-          <img src="images/person.svg" alt="Person" class="info-image" />
-          <p class="info-title center">Ningún mensaje fue encontrado</p>
-          <p class="info-text center">
-            Ingresa el texto que desees encriptar o desencriptar
-          </p>
-          <div>
-            <button onclick="copy()">Copiar</button>
+        <div id="side-background" class="side-background-initial">
+          <div id="side-top" class="nodisplay">
+            <textarea class="result" rows="10" cols="50" id="result"></textarea>
+          </div>
+          <div id="side-middle" class="side-middle">
+            <img
+              src="assets/images/person.svg"
+              alt="Person"
+              class="info-image"
+            />
+            <p class="info-title center">Ningún mensaje fue encontrado</p>
+            <p class="info-text center">
+              Ingresa el texto que desees encriptar o desencriptar
+            </p>
+          </div>
+          <div class="side-bottom">
+            <button
+              onclick="copy()"
+              id="button-copy"
+              class="nodisplay button-copy"
+            >
+              Copiar
+            </button>
           </div>
         </div>
       </section>
     </div>
-    <script>
-      function encrypt() {
-        let input = document.getElementById('message').value;
-        let result = document.getElementById('result');
-
-        input = input.replace(/e/g, 'enter');
-        input = input.replace(/i/g, 'imes');
-        input = input.replace(/a/g, 'ai');
-        input = input.replace(/o/g, 'ober');
-        input = input.replace(/u/g, 'ufat');
-
-        result.innerHTML = input;
-      }
-
-      function decrypt() {
-        const input = document.getElementById('message').value;
-        const result = document.getElementById('result');
-
-        input = input.replace(/enter/g, 'e');
-        input = input.replace(/imes/g, 'i');
-        input = input.replace(/ai/g, 'a');
-        input = input.replace(/ober/g, 'o');
-        input = input.replace(/ufat/g, 'u');
-
-        result.innerHTML = input;
-      }
-
-      function copy() {
-        let result = document.getElementById('result');
-        let range = document.createRange();
-
-        range.selectNode(result);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-        document.execCommand('copy');
-        window.getSelection().removeAllRanges();
-      }
-    </script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
