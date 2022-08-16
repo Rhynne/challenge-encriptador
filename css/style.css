@@ -69,8 +69,7 @@ section#main {
   display: grid;
   gap: 15px;
 }
-
-input {
+textarea {
   font-weight: 400;
   font-size: 32px;
   line-height: 150%;
@@ -78,16 +77,11 @@ input {
   background: none;
   color: #0a3871;
   align-self: start;
-  width: 20em;
+  resize: none;
 }
 
-input:focus {
+textarea:focus {
   outline: none;
-  border-bottom: 1px solid #0a3871;
-}
-
-input::placeholder {
-  color: #0a3871;
 }
 
 .info-tip {

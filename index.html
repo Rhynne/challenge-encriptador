@@ -15,12 +15,9 @@
           <img src="images/logo.svg" alt="Logo" class="logo" />
         </div>
         <div class="main-middle">
-          <input
-            type="text"
-            id="message"
-            placeholder="Ingrese el texto aquí"
-            class="input"
-          />
+          <textarea name="textarea" rows="10" cols="50" id="message">
+Ingrese el texto aquí</textarea
+          >
         </div>
         <div class="main-bottom">
           <div class="main-bottom-info">
@@ -29,13 +26,18 @@
             </p>
           </div>
           <div class="main-bottom-buttons">
-            <button class="button-encrypt">Encriptar</button>
-            <button class="button-decrypt">Desencriptar</button>
+            <button class="button-encrypt" id="encrypt" onclick="encrypt()">
+              Encriptar
+            </button>
+            <button class="button-decrypt" onclick="decrypt()">
+              Desencriptar
+            </button>
           </div>
         </div>
       </section>
       <section id="side">
         <div class="side-background">
+          <div id="result"></div>
           <img src="images/person.svg" alt="Person" class="image" />
           <p class="info-title center">Ningún mensaje fue encontrado</p>
           <p class="info-text center">
@@ -47,5 +49,32 @@
         </div>
       </section>
     </div>
+    <script>
+      function encrypt() {
+        let input = document.getElementById('message').value;
+        let result = document.getElementById('result');
+
+        input = input.replace(/e/g, 'enter');
+        input = input.replace(/i/g, 'imes');
+        input = input.replace(/a/g, 'ai');
+        input = input.replace(/o/g, 'ober');
+        input = input.replace(/u/g, 'ufat');
+
+        result.innerHTML = input;
+      }
+
+      function decrypt() {
+        let input = document.getElementById('message').value;
+        let result = document.getElementById('result');
+
+        input = input.replace(/enter/g, 'e');
+        input = input.replace(/imes/g, 'i');
+        input = input.replace(/ai/g, 'a');
+        input = input.replace(/ober/g, 'o');
+        input = input.replace(/ufat/g, 'u');
+
+        result.innerHTML = input;
+      }
+    </script>
   </body>
 </html>
