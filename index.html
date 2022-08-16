@@ -15,9 +15,13 @@
           <img src="images/logo.svg" alt="Logo" class="logo" />
         </div>
         <div class="main-middle">
-          <textarea name="textarea" rows="10" cols="50" id="message">
-Ingrese el texto aquí</textarea
-          >
+          <textarea
+            name="textarea"
+            rows="10"
+            cols="50"
+            id="message"
+            placeholder="Ingrese el texto aquí"
+          ></textarea>
         </div>
         <div class="main-bottom">
           <div class="main-bottom-info">
@@ -26,7 +30,7 @@ Ingrese el texto aquí</textarea
             </p>
           </div>
           <div class="main-bottom-buttons">
-            <button class="button-encrypt" id="encrypt" onclick="encrypt()">
+            <button class="button-encrypt" onclick="encrypt()">
               Encriptar
             </button>
             <button class="button-decrypt" onclick="decrypt()">
@@ -43,8 +47,8 @@ Ingrese el texto aquí</textarea
           <p class="info-text center">
             Ingresa el texto que desees encriptar o desencriptar
           </p>
-          <div style="display: none">
-            <button>Copiar</button>
+          <div>
+            <button onclick="copy()">Copiar</button>
           </div>
         </div>
       </section>
@@ -64,8 +68,8 @@ Ingrese el texto aquí</textarea
       }
 
       function decrypt() {
-        let input = document.getElementById('message').value;
-        let result = document.getElementById('result');
+        const input = document.getElementById('message').value;
+        const result = document.getElementById('result');
 
         input = input.replace(/enter/g, 'e');
         input = input.replace(/imes/g, 'i');
@@ -74,6 +78,17 @@ Ingrese el texto aquí</textarea
         input = input.replace(/ufat/g, 'u');
 
         result.innerHTML = input;
+      }
+
+      function copy() {
+        let result = document.getElementById('result');
+        let range = document.createRange();
+
+        range.selectNode(result);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
       }
     </script>
   </body>

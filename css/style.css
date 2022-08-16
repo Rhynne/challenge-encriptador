@@ -84,6 +84,10 @@ textarea:focus {
   outline: none;
 }
 
+textarea::placeholder {
+  color: #0a3871;
+}
+
 .info-tip {
   font-weight: 400;
   font-size: 12px;
